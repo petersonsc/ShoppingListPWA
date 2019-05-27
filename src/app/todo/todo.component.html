@@ -3,6 +3,9 @@
     <mat-form-field>
       <input matInput placeholder="Descrição da atividade" value="Sushi" [(ngModel)]="todo.desc">
     </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" placeholder="Valor" [(ngModel)]="todo.price"/>
+    </mat-form-field>
     <span fxFlex></span>
     <button mat-button (click)="save(todo)">Salvar</button>
   </div>
@@ -10,7 +13,9 @@
     <mat-list>
       <h3 mat-subheader>Atividades</h3>
       <mat-list-item *ngFor="let todo of todos">
+        <mat-checkbox mat-line></mat-checkbox>
         <h4 mat-line>{{todo.desc}}</h4>
+        <h4 mat-line>{{todo.price | currency:'BRL':'symbol':'4.2-2' }}</h4>
         <button mat-icon-button (click)="delete(todo)">
           <mat-icon>delete</mat-icon>
         </button>

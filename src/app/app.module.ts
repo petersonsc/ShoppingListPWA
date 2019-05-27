@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatIconModule,
+  MatInputModule, MatListModule, MatToolbarModule, MatCheckboxModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,7 @@ import { environment } from '../environments/environment';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatCheckboxModule,
     FlexLayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

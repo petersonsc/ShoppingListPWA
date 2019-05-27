@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 export class Todo {
   desc: string;
+  price: string;
 }
 
 @Component({
@@ -20,13 +22,19 @@ export class TodoComponent implements OnInit {
   }
 
   save(todo: Todo) {
-    this.todos.push(todo);
-    this.todo = new Todo();
-    this.todos = Object.assign([], this.todos);
+    if (todo.desc.length) {
+      this.todos.push(todo);
+      this.todo = new Todo();
+      this.todos = Object.assign([], this.todos);
+    }
   }
 
   delete(todo: Todo) {
     this.todos.splice(this.todos.indexOf(todo), 1);
+  }
+
+  fixePrice(price) {
+      return parseFloat(price).toFixed( 2 );
   }
 
 }
